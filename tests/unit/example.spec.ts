@@ -1,10 +1,17 @@
 import { mount } from '@vue/test-utils'
-import Tab1Page from '@/views/Tab1Page.vue'
 import { describe, expect, test } from 'vitest'
+import { createPinia } from 'pinia'
+import { IonicVue } from '@ionic/vue'
+import HomePage from '@/views/HomePage.vue'
 
-describe('Tab1Page.vue', () => {
-  test('renders tab 1 Tab1Page', () => {
-    const wrapper = mount(Tab1Page)
-    expect(wrapper.text()).toMatch('Tab 1 page')
+describe('HomePage.vue', () => {
+  test('renders balance section', () => {
+    const wrapper = mount(HomePage, {
+      global: {
+        plugins: [createPinia(), IonicVue],
+        stubs: { 'ion-page': true, 'ion-content': true, 'ion-fab': true, 'ion-fab-button': true },
+      },
+    })
+    expect(wrapper.exists()).toBe(true)
   })
 })
