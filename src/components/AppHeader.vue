@@ -20,13 +20,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { IonHeader, IonToolbar } from '@ionic/vue';
+import { formatPeriod } from '@/utils/format';
 
-const currentPeriod = computed(() => {
-  const now = new Date();
-  const month = now.toLocaleDateString('es-ES', { month: 'long' });
-  const year = now.getFullYear();
-  return `${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`;
-});
+const currentPeriod = computed(() => formatPeriod());
 </script>
 
 <style scoped>

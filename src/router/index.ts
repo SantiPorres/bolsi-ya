@@ -5,7 +5,11 @@ import TabsPage from '../views/TabsPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/home'
+    redirect: '/splash'
+  },
+  {
+    path: '/splash',
+    component: () => import('@/views/SplashPage.vue')
   },
   {
     path: '/tabs/',
@@ -30,6 +34,18 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'categories',
         component: () => import('@/views/CategoriesPage.vue')
+      },
+      {
+        path: 'register',
+        component: () => import('@/views/MovementFormPage.vue')
+      },
+      {
+        path: 'movement/:id',
+        component: () => import('@/views/MovementDetailPage.vue')
+      },
+      {
+        path: 'movement/:id/edit',
+        component: () => import('@/views/MovementFormPage.vue')
       }
     ]
   }

@@ -1,6 +1,5 @@
 <template>
   <ion-page>
-    <AppHeader />
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
@@ -38,7 +37,6 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonPage, IonRouterOutlet } from '@ionic/vue';
-import AppHeader from '@/components/AppHeader.vue';
 </script>
 
 <style scoped>
